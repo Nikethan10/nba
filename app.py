@@ -13,16 +13,16 @@ import plotly.express as px
 # ============================================================
 @st.cache_data
 def load_data():
-    players = pd.read_csv("C:\\Users\\tirum\\Downloads\\players.csv")
-    teams = pd.read_csv("C:\\Users\\tirum\\Downloads\\teams.csv")
+    players = pd.read_csv("players.csv")
+    teams = pd.read_csv("teams.csv")
 
-    with zipfile.ZipFile("C:\\Users\\tirum\\Downloads\\games.csv.zip") as z:
+    with zipfile.ZipFile("games.csv.zip") as z:
         games = pd.read_csv(z.open("games.csv"))
 
-    with zipfile.ZipFile("C:\\Users\\tirum\\Downloads\\games_details.csv.zip") as z:
+    with zipfile.ZipFile("games_details.csv.zip") as z:
         game_details = pd.read_csv(z.open("games_details.csv"))
 
-    with zipfile.ZipFile("C:\\Users\\tirum\\Downloads\\ranking.csv.zip") as z:
+    with zipfile.ZipFile("ranking.csv.zip") as z:
         ranking = pd.read_csv(z.open("ranking.csv"))
 
     return players, teams, games, game_details, ranking
@@ -228,4 +228,5 @@ with tabs[5]:
 # ============================================================
 # END
 # ============================================================
+
 st.success("NBA Analytics Dashboard Loaded Successfully ✔")
